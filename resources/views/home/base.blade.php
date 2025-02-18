@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="keywords" content="	agency, ai, ai writer, app landing, creative, crm, html template, hosting, mobile app, multipurpose, payment, saas, software, support">
     <meta name="description" content="Gen Z bank of the future.">
-    <meta property="og:site_name" content="Piku">
+    <meta property="og:site_name" content="{{ $siteName }}">
     <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{$siteName}} - {{$pageName}}">
@@ -24,38 +24,6 @@
     <!-- Favicon Link -->
     <link rel="icon" type="image/png" href="{{asset('home/images/loader.svg')}}">
     @stack('css')
-    <style>
-        .watkey {
-            z-index: 9;
-            position: fixed;
-            bottom: 15px;
-            left: 15px;
-            padding: 4px;
-            border: 1px solid #0d9f16;
-            border-radius: 50%;
-        }
-    </style>
-
-    <style>
-        /* Custom CSS for the Float widget */
-        .telegram-float-widget {
-            position: fixed;
-            left: 10px;
-            /* Adjust the left positioning as needed */
-            bottom: 10rem;
-            /* Adjust the bottom positioning as needed */
-            z-index: 9999;
-        }
-
-        .whatsapp-float-widget {
-            position: fixed;
-            left: 70px;
-            /* Adjust the left positioning as needed */
-            bottom: 10px;
-            /* Adjust the bottom positioning as needed */
-            z-index: 9999;
-        }
-    </style>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.min.css')}}" media="all">
     <!-- Main style sheet -->
@@ -65,14 +33,14 @@
 
     <!-- Fix Internet Explorer ______________________________________-->
     <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js')}}"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <script src="{{asset('home/vendor/html5shiv.js')}}"></script>
     <script src="{{asset('home/vendor/respond.js')}}"></script>
     <![endif]-->
 </head>
 
 <body>
-<div class="main-page-wrapper dark-bg p-30">
+<div class="main-page-wrapper">
     <!-- ===================================================
         Loading Transition
     ==================================================== -->
@@ -80,18 +48,15 @@
         <div id="ctn-preloader" class="ctn-preloader">
             <div class="icon"><img src="{{asset('home/images/loader.svg')}}" alt="" class="m-auto d-block"> <span></span></div>
             <div class="txt-loading">
-                <div id="preloader">
-                    @foreach (str_split($siteName) as $char)
-                        <span data-text-preloader="{{ $char }}" class="letters-loading">
+                @foreach (str_split($siteName) as $char)
+                    <span data-text-preloader="{{ $char }}" class="letters-loading">
                             {{ $char }}
                         </span>
-                    @endforeach
-                </div>
+                @endforeach
 
             </div>
         </div>
     </div>
-
 
 
     <!--
@@ -99,24 +64,28 @@
         Theme Main Menu
     ==============================================
     -->
-    <header class="theme-main-menu menu-style-one">
-        <div class="inner-content bg-wrapper bg-one border-20">
+    <header class="theme-main-menu menu-style-ten sticky-menu menu-overlay">
+        <div class="inner-content gap-one">
             <div class="top-header position-relative">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="logo order-lg-0">
-                        <a href="{{url('/')}}" class="d-flex align-items-center">
+                        <a href="{{ url('/') }}" class="d-flex align-items-center">
                             <img src="{{asset('home/images/'.$web->logo)}}" alt="" style="width: 100px;">
                         </a>
                     </div>
                     <!-- logo -->
-                    <div class="right-widget ms-auto ms-lg-0 me-3 me-lg-0 order-lg-3">
+                    <div class="order-lg-2 ms-5 d-none d-md-inline-block">
+                        <p class="m0 fs-20 font-manrope fw-500">Get <a href="{{ route('register') }}" class="fw-600 text-dark">Started</a></p>
+                    </div>
+                    <div class="right-widget order-lg-3 ms-auto me-3 me-lg-0">
                         <ul class="d-flex align-items-center style-none">
-                            <li class="d-none d-md-inline-block ms-3">
-                                <a href="{{route('register')}}" class="btn-one">Let’s Started</a>
+                            <li class="d-none d-sm-inline-block">
+                                <a href="{{ route('user.dashboard') }}" class="login-btn-one fw-500 d-flex align-items-center tran3s">
+                                    <img src="{{asset('home/images/icon/icon_18.svg')}}" alt="" class="me-2"> <span>My Account</span></a>
                             </li>
                         </ul>
                     </div>
-                    <nav class="navbar navbar-expand-lg p0 order-lg-2">
+                    <nav class="navbar navbar-expand-lg p0 order-lg-2 ms-lg-auto">
                         <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                                 aria-label="Toggle navigation">
@@ -124,9 +93,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav align-items-lg-center">
-                                <li class="d-block d-lg-none"><div class="logo"><a href="{{url('/')}}" class="d-block">
-                                            <img src="{{asset('home/images/'.$web->logo)}}" alt="" style="width:100px;"></a></div></li>
-
+                                <li class="d-block d-lg-none"><div class="logo"><a href="{{ url('/') }}" class="d-block"><img src="{{asset('home/images/'.$web->logo)}}" alt=""></a></div></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="{{ route('home') }}" role="button"  aria-expanded="false">Home
                                     </a>
@@ -153,6 +120,11 @@
                                 <li class="d-md-none ps-3 pe-3 mt-20">
                                     <a href="{{ route('register') }}" class="btn-one w-100">Let’s Started</a>
                                 </li>
+
+                                <li class="d-md-none ps-3 pe-3 mt-20">
+                                    <a href="#" class="login-btn-one fw-500 d-flex justify-content-center align-items-center tran3s">
+                                        <img src="{{asset('home/images/icon/icon_18.svg')}}" alt="" class="me-2"> <span>My Account</span></a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -162,93 +134,101 @@
     </header>
     <!-- /.theme-main-menu -->
 
+
+
     @yield('content')
 
     <!--
-=====================================================
-    Fancy Banner One
-=====================================================
--->
-    <div class="fancy-banner-one position-relative z-1 bg-one border-30 text-center pt-130 lg-pt-80 pb-130 lg-pb-80 mb-30 lg-mb-20">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-8 col-lg-7 m-auto">
-                    <div class="title-one mb-35 lg-mb-30">
-                        <h2>Take Control of Your Finances</h2>
+    =====================================================
+        Fancy Banner Eleven
+    =====================================================
+    -->
+    <div class="fancy-banner-eleven mt-150 xl-mt-130 lg-mt-80 gap-40">
+        <div class="bg-wrapper position-relative z-1 pt-120 lg-pt-80 pb-120 lg-pb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="title-ten">
+                            <h2>Take control of your finances</h2>
+                        </div>
+                        <p class="fs-24 text-dark mt-35 mb-35">
+                            Get a secure and flexible digital banking experience with instant access to virtual debit cards, seamless transactions,
+                            and hassle-free international payments.
+                        </p>
+                        <a href="{{ route('register') }}" class="btn-nineteen">Get Started</a>
                     </div>
                 </div>
             </div>
-            <p class="fs-28 mb-45 lg-mb-30">Get a secure and flexible digital banking experience with instant access to virtual debit cards, seamless transactions, and hassle-free international payments.</p>
-            <a href="{{route('register')}}" class="btn-two xl">Get Started Now</a>
         </div>
-        <img src="{{asset('home/images/assets/ils_02.png')}}" alt="" class="shapes shape_01">
-        <img src="{{asset('home/images/assets/ils_03.png')}}" alt="" class="shapes shape_02">
     </div>
+
+
 
 
     <!--
     =====================================================
-        Footer One
+        Footer Three
     =====================================================
     -->
-    <div class="footer-one border-30 bg-one">
-        <div class="position-relative z-1">
-            <div class="container">
-                <!-- /.email-banner -->
-                <div class="position-relative">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="footer-intro mb-30">
-                                <div class="logo">
-                                    <a href="{{url('/')}}">
-                                        <img src="{{asset('home/images/'.$web->logo)}}" alt="" style="width: 150px;">
-                                    </a>
-                                </div>
-                                <!-- logo -->
-                            </div>
+    <div class="footer-three">
+        <div class="container">
+            <div class="position-relative">
+                <div class="row justify-content-between">
+                    <div class="col-lg-2 order-lg-0">
+                        <div class="logo mt-15 mb-30">
+                            <a href="{{ url('/') }}">
+                                <img src="{{asset('home/images/'.$web->logo)}}" alt="">
+                            </a>
                         </div>
-                        <div class="col-lg-2 col-md-3 col-6">
-                            <div class="footer-nav mb-20">
-                                <ul class="footer-nav-link style-none">
-                                    <li><a href="{{ route('about') }}">About </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-6">
-                            <div class="footer-nav mb-20">
-                                <ul class="footer-nav-link style-none">
-                                    <li><a href="{{ route('faqs') }}">Faq’s</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-sm-6">
-                            <div class="footer-nav mb-20">
-                                <ul class="footer-nav-link style-none">
-                                    <li><a href="{{ route('services') }}">Services</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-3 col-sm-6">
-                            <div class="footer-contact mb-20">
-                                <p class="fw-500 fs-20 text-dark mb-30 md-mb-20">
-                                    {!! $web->address !!}
-                                </p>
-                                @if($web->phone)
-                                    <a href="tel:{{$web->phone}}" class="tel fw-500 fs-24 tran3s mb-40">{{$web->phone}}</a>
-                                @endif
-                                <ul class="style-none d-flex align-items-center social-icon">
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
+                        <!-- logo -->
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="footer-nav mb-20">
+                            <ul class="footer-nav-link style-none">
+                                <li><a href="{{ route('about') }}">About </a></li>
+                            </ul>
                         </div>
                     </div>
-                    <p class="copyright-text m0"><strong class="text-dark">@ 2022 - {{date('Y')}}.</strong> All Right Reserved. </p>
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="footer-nav mb-20">
+                            <ul class="footer-nav-link style-none">
+                                <li><a href="{{ route('faqs') }}">Faq’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6">
+                        <div class="footer-nav mb-20">
+                            <ul class="footer-nav-link style-none">
+                                <li><a href="{{ route('services') }}">Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="footer-contact mb-20">
+                            <p class="fw-500 fs-20 text-dark mb-30 md-mb-20">
+                                {!! $web->address !!}
+                            </p>
+                            @if($web->phone)
+                                <a href="tel:{{$web->phone}}" class="tel fw-500 fs-24 tran3s mb-40">{{$web->phone}}</a>
+                            @endif
+                            <ul class="style-none d-flex align-items-center social-icon">
+                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div> <!-- /.footer-one -->
+        <div class="container">
+            <div class="bottom-footer border-dark">
+                <div class="d-md-flex align-items-center justify-content-between">
+                    <p class="copyright-text text-center m0"><span> @ 2022 - {{date('Y')}} </span> All Right Reserved</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- /.footer-three -->
 
 
 
@@ -336,6 +316,6 @@
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</div> <!-- /.main-page-wrapper -->
+</div>
 </body>
 </html>

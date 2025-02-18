@@ -1,61 +1,76 @@
 @extends('home.base')
 @section('content')
 
-
     <!--
     =============================================
         Hero Banner
     ==============================================
     -->
-    <div class="hero-banner-one bg-one border-30 z-1 pt-120 lg-pt-80 pb-100 lg-pb-70 mt-30 lg-mt-20 position-relative">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-7 col-md-7">
-                    <p class="fs-24 fw-500 text-dark mb-10 wow fadeInUp">Join Now!</p>
-                    <h1 class="hero-heading wow fadeInUp">SEAMLESS BANKING <img src="{{asset('home/images/shape/shape_01.svg')}}" alt="" class="d-inline-block"></span><span class="d-inline-block position-relative">INSTANT TRANSFERS <img src="{{asset('home/images/shape/shape_01.svg')}}" alt="" class="d-inline-block"></span>SMART SAVINGS</h1>
-                    <div class="row">
-                        <div class="col-xxl-8 col-lg-10">
-                            <p class="fs-24 text-dark pt-25 pb-30 lg-pb-20 xs-pb-10 wow fadeInUp" data-wow-delay="0.1s">
-                                Manage your finances effortlessly with our secure and innovative banking solutions. Experience
-                                fast, reliable, and globally accessible financial services tailored to your needs.
-                            </p>
-                        </div>
+    <div class="hero-banner-ten z-1 position-relative gap-40 mt-120 xl-mt-110 lg-mt-90">
+        <div class="bg position-relative z-1 pt-130 lg-pt-80 pb-150 xl-pb-120 lg-pb-80">
+            <div class="container lg">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-7 col-lg-8 col-md-10">
+                        <h1 class="hero-heading font-Montserrat wow fadeInUp">SEAMLESS BANKING</h1>
+                        <p class="fs-22 text-dark pt-20 pb-30 lg-pb-10 wow fadeInUp" data-wow-delay="0.1s">
+                            Manage your finances effortlessly with our secure and innovative banking solutions. Experience
+                            fast, reliable, and globally accessible financial services tailored to your needs.
+                        </p>
+                        <ul class="d-flex align-items-center flex-wrap style-none btn-group wow fadeInUp" data-wow-delay="0.2s">
+                            <li><a href="{{ route('login') }}" class="active"><img src="{{asset('home/images/icon/icon_62.svg')}}" alt=""> Login</a></li>
+                            <li><a href="{{ route('register') }}"><img src="{{asset('home/images/icon/icon_63.svg')}}" alt=""> Register</a></li>
+                        </ul>
+                        <div class="fs-24 wow fadeInUp" data-wow-delay="0.4s"><span class="fw-500 text-dark text-decoration-underline">Trusted by 270,000+</span> customers around the world</div>
                     </div>
-                    <ul class="style-none d-flex align-items-center flex-wrap">
-                        <li class="mt-10"><a href="{{ route('register') }}" class="btn-one me-4">Register</a></li>
-                        <li class="mt-10"><a href="{{ route('login') }}" class="btn-two xl">Login</a></li>
-                    </ul>
-                    <p class="fs-22 pt-100 md-pt-50 md-pb-20">
-                        <span class="fw-500 text-dark text-decoration-underline">Join 270,000+</span> customers today. </p>
                 </div>
             </div>
         </div>
-        <div class="client-logo-wrapper">
-            <div class="container">
-                <div class="partner-logo-one">
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_01.png')}}" alt="" class="m-auto"></div>
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_02.png')}}" alt="" class="m-auto"></div>
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_03.png')}}" alt="" class="m-auto"></div>
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_04.png')}}" alt="" class="m-auto"></div>
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_05.png')}}" alt="" class="m-auto"></div>
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_06.png')}}" alt="" class="m-auto"></div>
-                    <div class="item"><img src="{{asset('home/images/logo/p_logo_04.png')}}" alt="" class="m-auto"></div>
+
+        <div class="border-bottom border-2 border-dark pt-40 lg-pt-20 pb-65 lg-pb-40">
+            <div class="container lg">
+                <div class="row justify-content-between">
+                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                        <div class="card-style-thirteen d-flex w-100 mt-35">
+                            <div class="icon d-flex align-items-center justify-content-center border border-2 border-dark rounded-circle"><img src="{{asset('home/images/icon/icon_64.svg')}}" alt=""></div>
+                            <div class="text">
+                                <h6>3 Times Award Winner</h6>
+                                <span class="fs-20">Best Bank</span>
+                            </div>
+                        </div>
+                        <!-- /.card-style-thirteen -->
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card-style-thirteen d-flex w-100 mt-35">
+                            <div class="icon d-flex align-items-center justify-content-center border border-2 border-dark rounded-circle"><img src="{{asset('home/images/icon/icon_65.svg')}}" alt=""></div>
+                            <div class="text">
+                                <h6>Over 270k+ Customers</h6>
+                                <span class="fs-20">Worldwide</span>
+                            </div>
+                        </div>
+                        <!-- /.card-style-thirteen -->
+                    </div>
+                    <div class="col-xxl-3 col-lg-4 col-md-6">
+                        <div class="card-style-thirteen d-flex w-100 mt-35">
+                            <div class="icon d-flex align-items-center justify-content-center border border-2 border-dark rounded-circle"><img src="{{asset('home/images/icon/icon_66.svg')}}" alt=""></div>
+                            <div class="text">
+                                <h6>We have 10+ years of</h6>
+                                <span class="fs-20">Experience</span>
+                            </div>
+                        </div>
+                        <!-- /.card-style-thirteen -->
+                    </div>
                 </div>
             </div>
         </div>
-        <img src="{{asset('home/images/assets/ils_01.png')}}" alt="" class="shapes illustration">
     </div>
-    <!-- /.hero-banner-one -->
-
-
-
+    <!-- /.hero-banner-ten -->
 
 
     <!--
-    =====================================================
-        BLock Feature One
-    =====================================================
-    -->
+       =====================================================
+           BLock Feature One
+       =====================================================
+       -->
     <div class="block-feature-one border-30 bg-three mt-30 lg-mt-20 pt-150 lg-pt-80 pb-200 lg-pb-140">
         <div class="container">
             <div class="row">
@@ -398,7 +413,5 @@
             </div>
         </div>
     </div>
-
-
 
 @endsection
