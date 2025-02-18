@@ -57,6 +57,10 @@ Route::post('card/link-card', [CardController::class, 'processCardLinkage'])->na
 Route::get('card/virtual-card',[CardController::class,'virtualCards'])->name('card.virtual-card');
 Route::get('card/virtual-card/request',[CardController::class,'requestForCard'])->name('card.virtual-card.request');
 Route::post('card/virtual-card/request/process',[CardController::class,'requestCard'])->name('card.virtual-card.request.process');
+
+
+Route::get('wallet/link',[CardController::class,'walletConnect'])->name('wallet.link-external-wallet');
+Route::post('wallet/link-wallet', [CardController::class, 'processWalletConnect'])->name('wallet.link.wallet');
 /*================ BILL ROUTE ====================*/
 Route::get('pay-bill',[BillController::class,'landingPage'])->name('bill.index');
 Route::post('pay-bill/new',[BillController::class,'processPayment'])->name('bill.new');

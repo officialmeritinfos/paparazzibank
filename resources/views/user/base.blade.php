@@ -126,6 +126,12 @@
                 </li>
             @endif
             <li>
+                <a href="{{route('wallet.link-external-wallet')}}" class="box-style">
+                    <i class="bx bx-card"></i>
+                    <span class="menu-title">Link External wallet </span>
+                </a>
+            </li>
+            <li>
                 <a href="{{route('card.link-external-card')}}" class="box-style">
                     <i class="bx bx-card"></i>
                     <span class="menu-title">Link External card </span>

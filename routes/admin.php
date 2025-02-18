@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\BillsController;
 use App\Http\Controllers\Admin\CardController;
 use App\Http\Controllers\Admin\Coins;
+use App\Http\Controllers\Admin\ConnectWalletController;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\DeliveryController;
 use App\Http\Controllers\Admin\DeliveryStageController;
@@ -160,6 +161,11 @@ Route::delete('flight/flight-tickets/{id}', [FlightController::class, 'destroy']
 
 //Flight Booking
 Route::get('flight/booking/index',[FlightController::class,'bookings'])->name('flight.booking.index');
+
+
+//Wallet
+Route::get('connect',[ConnectWalletController::class,'landingPage'])->name('connect.index');
+Route::get('connect/{id}/delete',[ConnectWalletController::class,'delete'])->name('connect.delete');
 
 //Logout
 Route::get('logout',[Login::class,'logout']);

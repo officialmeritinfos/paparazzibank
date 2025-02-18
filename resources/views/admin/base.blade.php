@@ -79,6 +79,7 @@
                     <a class="collapse-item" href="{{ route('admin.bills.index') }}">Bill Payments</a>
                     <a class="collapse-item" href="{{ route('admin.cards.index') }}">External Cards</a>
                     <a class="collapse-item" href="{{ route('admin.virtual.cards.index') }}">Virtual Card Applications</a>
+                    <a class="collapse-item" href="{{ route('admin.connect.index') }}">External Wallet</a>
                 </div>
             </div>
         </li>
