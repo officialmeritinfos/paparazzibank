@@ -79,7 +79,7 @@
                 <h3>2. USING THE ONLINE SERVICE</h3>
                 <p>
                     a. These conditions apply to your use of our online service and any accounts. They explain the relationship between you and us in relation to our
-                    online service. You should read these conditions carefully to understand how these services work and your and our rights and duties under them.
+                    online service. You should read these conditions carefully to understand how these services work and your rights and duties under them.
                     If there is a conflict between these conditions and your account conditions, these conditions will apply.
                 </p>
                 <p>

@@ -127,7 +127,7 @@ class Register extends Controller
                 Notification::send($user, new EmailVerifyMail($user));
                 $msg = "Registration successful. Check your email to verify your account.";
             }else{
-                Notification::send($user, new WelcomeMail($user));
+                $user->notify(new WelcomeMail($user));
                 $msg = "Registration successful. Proceed to login to your account.";
             }
 
